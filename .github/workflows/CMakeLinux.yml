@@ -1,12 +1,12 @@
 name: CMake Linux
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
+  # pull_request:
+  #   branches:
+  #     - master
   workflow_dispatch:
 
 env:
@@ -33,7 +33,6 @@ jobs:
       fail-fast: false
       matrix:
         platform:
-          - { name: Linux GCC,      os: ubuntu-latest }
           - { name: Linux Clang,    os: ubuntu-latest, flags: -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ }
 
     steps:
